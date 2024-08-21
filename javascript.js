@@ -123,13 +123,31 @@ const paperBtn = document.querySelector(".paper");
 const scissorsBtn = document.querySelector(".scissors");
 
 rockBtn.addEventListener("click", () => {
-    console.log(playRound('rock', getComputerChoice()));
+    playRound('rock', getComputerChoice());
+    if (humanScore == 5) {
+        displayWin();
+    }
+    if (computerScore == 5) {
+        displayLose();
+    }
 });
 paperBtn.addEventListener("click", () => {
-    console.log(playRound('paper', getComputerChoice()));
+    playRound('paper', getComputerChoice());
+    if (humanScore == 5) {
+        displayWin();
+    }
+    if (computerScore == 5) {
+        displayLose();
+    }
 });
 scissorsBtn.addEventListener("click", () => {
-    console.log(playRound('scissors', getComputerChoice()));
+    playRound('scissors', getComputerChoice());
+    if (humanScore == 5) {
+        displayWin();
+    }
+    if (computerScore == 5) {
+        displayLose();
+    }
 })
 
 
@@ -151,6 +169,15 @@ function updateComputerScore() {
 const result = document.querySelector(".result");
 function updateResult(text) {
     result.textContent = text;
+}
+
+const gameResult = document.querySelector(".gameResult");
+function displayWin() {
+    gameResult.textContent = "You won!";
+}
+
+function displayLose() {
+    gameResult.textContent = "You Lost!";
 }
 
 

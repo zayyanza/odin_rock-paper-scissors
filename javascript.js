@@ -22,19 +22,19 @@ function playRound(humanChoice,computerChoice) {
         case 'rock':
             switch (computerChoice) {
                 case 'rock':
-                    return "Draw! rock vs rock"            
+                    updateResult("Draw! rock vs rock");             
                     break;
         
                 case 'paper':
                     computerScore++;
                     updateComputerScore();
-                    return "You Lose! paper beats rock"
+                    updateResult("You Lose! paper beats rock");
                     break;
         
                 case 'scissors':
                     humanScore++;
                     updateHumanScore();
-                    return "You win! rock beats scissors"
+                    updateResult("You win! rock beats scissors");
                     break;
                     
                 default:
@@ -47,17 +47,17 @@ function playRound(humanChoice,computerChoice) {
                 case 'rock':
                     humanScore++;
                     updateHumanScore();
-                    return "You win! paper beats rock"            
+                    updateResult("You win! paper beats rock");           
                     break;
         
                 case 'paper':
-                    return "Draw! paper vs paper"
+                    updateResult("Draw! paper vs paper");
                     break;
         
                 case 'scissors':
                     computerScore++;
                     updateComputerScore();
-                    return "You Lose! scissors beats paper"
+                    updateResult("You Lose! scissors beats paper");
                     break;
                     
                 default:
@@ -70,17 +70,17 @@ function playRound(humanChoice,computerChoice) {
                 case 'rock':
                     computerScore++;
                     updateComputerScore();
-                    return "You Lose! rock beats scissors"            
+                    updateResult("You Lose! rock beats scissors");          
                     break;
         
                 case 'paper':
                     humanScore++;
                     updateHumanScore();
-                    return "You Win! scissors beats paper"
+                    updateResult("You Win! scissors beats paper");
                     break;
         
                 case 'scissors':
-                    return "Draw! scissors vs scissors"
+                    updateResult("Draw! scissors vs scissors");
                     break;
                     
                 default:
@@ -146,6 +146,11 @@ function updateHumanScore() {
 const cScore = document.querySelector(".computerScore");
 function updateComputerScore() {
     cScore.textContent = computerScore;
+}
+
+const result = document.querySelector(".result");
+function updateResult(text) {
+    result.textContent = text;
 }
 
 
